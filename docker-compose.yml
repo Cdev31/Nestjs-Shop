@@ -1,4 +1,4 @@
-version: '3'
+version: '3.3'
 
 
 services: 
@@ -13,3 +13,13 @@ services:
      POSTGRES_DB: ${DB_NAME}
    volumes:
     - ./data:/var/lib/postgresql/data   
+
+  pgAdmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin4Containt
+    restart: always
+    ports:
+      - "8888:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: kalet.svdev@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: admin_123
